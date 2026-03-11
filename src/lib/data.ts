@@ -1,64 +1,86 @@
-export const projects = [
-  {
-    id: 1,
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce solution with a modern UI, state management, and payment integration.",
-    imageUrl: "https://images.unsplash.com/photo-1555529771-835f59fc5efe?q=80&w=2070&auto=format&fit=crop",
-    link: "#",
-  },
-  {
-    id: 2,
-    title: "Data Visualization Dashboard",
-    description: "An interactive dashboard for visualizing complex datasets using D3.js and React.",
-    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-    link: "#",
-  },
-  {
-    id: 3,
-    title: "SaaS Landing Page",
-    description: "A responsive and animated landing page for a software-as-a-service product.",
-    imageUrl: "https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=2071&auto=format&fit=crop",
-    link: "#",
-  },
-  {
-    id: 4,
-    title: "Mobile Fitness App",
-    description: "A cross-platform mobile app built with React Native for tracking workouts and nutrition.",
-    imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop",
-    link: "#",
-  },
-  {
-    id: 5,
-    title: "Real-time Chat Application",
-    description: "A chat application using WebSockets for instant messaging and notifications.",
-    imageUrl: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
-    link: "#",
-  },
-  {
-    id: 6,
-    title: "AI-Powered Content Generator",
-    description: "A tool that leverages GPT-3 to generate marketing copy and blog posts.",
-    imageUrl: "https://images.unsplash.com/photo-1620712943543-2858200e94b1?q=80&w=1964&auto=format&fit=crop",
-    link: "#",
-  },
+export const testimonials = [
+	{
+		quote:
+			"Working with this developer was a dream. They delivered a high-quality product on time and exceeded all of our expectations. The communication was excellent, and they were always willing to go the extra mile.",
+		name: "Jane Doe",
+		title: "CEO, Innovate Inc.",
+		imgSrc: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2561&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+	},
+	{
+		quote:
+			"The level of professionalism and technical expertise is unmatched. Our new website is not only beautiful but also incredibly fast and responsive. I would highly recommend their services to anyone.",
+		name: "John Smith",
+		title: "CTO, Tech Solutions",
+		imgSrc: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+	},
+	{
+		quote:
+			"An absolute pleasure to collaborate with. They brought our vision to life with precision and creativity. The final product is a testament to their skill and dedication. We couldn't be happier with the result.",
+		name: "Emily White",
+		title: "Marketing Director, Creative Co.",
+		imgSrc: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2576&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+	},
+	{
+		quote:
+			"From start to finish, the process was seamless. They are a true professional who is passionate about their work. The quality of the code and the attention to detail were exceptional. Highly recommended.",
+		name: "Michael Brown",
+		title: "Lead Developer, CodeBase",
+		imgSrc: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+	},
 ];
 
-export const skills = [
-  "React", "TypeScript", "JavaScript", "Next.js", "Node.js", "Tailwind CSS",
-  "Framer Motion", "Three.js", "GraphQL", "PostgreSQL", "Docker", "Figma"
+export const features = [
+	{
+		title: "Modern UI/UX Design",
+		description:
+			"Crafting beautiful, intuitive, and responsive user interfaces that provide an exceptional user experience across all devices.",
+		icon: "Star",
+	},
+	{
+		title: "High-Performance Code",
+		description:
+			"Writing clean, efficient, and scalable code that ensures your web application is fast, reliable, and maintainable.",
+		icon: "Code",
+	},
+	{
+		title: "Robust & Secure",
+		description:
+			"Building secure and reliable applications with a focus on data integrity and protection against common vulnerabilities.",
+		icon: "ShieldCheck",
+	},
 ];
 
-export const experiences = [
+export const techLogos = [
+	{
+		src: "https://raw.githubusercontent.com/salman0ansari/github-readme-stats-app/main/public/icons/react.svg",
+		alt: "React",
+	},
+	{
+		src: "https://raw.githubusercontent.com/salman0ansari/github-readme-stats-app/main/public/icons/nextjs.svg",
+		alt: "Next.js",
+	},
+	{
+		src: "https://raw.githubusercontent.com/salman0ansari/github-readme-stats-app/main/public/icons/tailwindcss.svg",
+		alt: "Tailwind CSS",
+	},
+	{
+		src: "https://raw.githubusercontent.com/salman0ansari/github-readme-stats-app/main/public/icons/typescript.svg",
+		alt: "TypeScript",
+	},
+	{
+		src: "https://raw.githubusercontent.com/salman0ansari/github-readme-stats-app/main/public/icons/nodejs.svg",
+		alt: "Node.js",
+	},
+	{
+		src: "https://raw.githubusercontent.com/salman0ansari/github-readme-stats-app/main/public/icons/firebase.svg",
+		alt: "Firebase",
+	},
     {
-        role: "Senior Frontend Developer",
-        company: "Tech Solutions Inc.",
-        duration: "2021 - Present",
-        description: "Leading the development of a new design system and building complex, interactive user interfaces for our flagship products using React and TypeScript."
-    },
+		src: "https://raw.githubusercontent.com/salman0ansari/github-readme-stats-app/main/public/icons/graphql.svg",
+		alt: "GraphQL",
+	},
     {
-        role: "UI/UX Designer",
-        company: "Creative Agency",
-        duration: "2019 - 2021",
-        description: "Designed and prototyped user-centric interfaces for various clients, focusing on usability, accessibility, and modern design principles."
-    }
-]
+		src: "https://raw.githubusercontent.com/salman0ansari/github-readme-stats-app/main/public/icons/mongodb.svg",
+		alt: "MongoDB",
+	},
+];
