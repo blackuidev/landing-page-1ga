@@ -3,13 +3,36 @@ import { motion } from "framer-motion";
 import { GlowingCards, GlowingCard } from "@/components/lightswind/glowing-cards";
 import { TeamCarousel } from "@/components/lightswind/team-carousel";
 import { SlidingLogoMarquee } from "@/components/lightswind/sliding-logo-marquee";
-import { testimonials, features, techLogos } from "@/lib/data";
-import { Star, Code, ShieldCheck } from "lucide-react";
+import { BentoGrid, BentoGridItem } from "@/components/lightswind/bento-grid";
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "@/components/lightswind/accordion";
+import { testimonials, features, techLogos, projects, faqs } from "@/lib/data";
+import {
+	Star,
+	Code,
+	ShieldCheck,
+	ShoppingCart,
+	LayoutDashboard,
+	Smartphone,
+	Bot,
+	ArrowRight,
+} from "lucide-react";
 
 const iconMap = {
 	Star: <Star />,
 	Code: <Code />,
 	ShieldCheck: <ShieldCheck />,
+};
+
+const projectIconMap = {
+	ShoppingCart: <ShoppingCart />,
+	LayoutDashboard: <LayoutDashboard />,
+	Smartphone: <Smartphone />,
+	Bot: <Bot />,
 };
 
 export function HomePage() {
@@ -94,6 +117,67 @@ export function HomePage() {
 						Powering Modern Web Applications
 					</h2>
 					<SlidingLogoMarquee logos={techLogos} />
+				</div>
+			</section>
+
+			{/* Projects Section */}
+			<section className="py-20 w-full">
+				<div className="container mx-auto px-4">
+					<h2 className="text-4xl font-bold text-center text-white mb-12">
+						Featured Projects
+					</h2>
+					<BentoGrid className="max-w-4xl mx-auto">
+						{projects.map((item, i) => (
+							<BentoGridItem
+								key={i}
+								title={item.title}
+								description={item.description}
+								header={
+									<img
+										src={item.header}
+										alt={item.title}
+										className="w-full h-full object-cover rounded-lg"
+									/>
+								}
+								icon={projectIconMap[item.icon]}
+								className={item.className}
+							/>
+						))}
+					</BentoGrid>
+				</div>
+			</section>
+
+			{/* FAQ Section */}
+			<section className="py-20 w-full bg-black">
+				<div className="container mx-auto px-4 max-w-3xl">
+					<h2 className="text-4xl font-bold text-center text-white mb-12">
+						Frequently Asked Questions
+					</h2>
+					<Accordion type="single" collapsible className="w-full">
+						{faqs.map((faq, index) => (
+							<AccordionItem value={`item-${index + 1}`} key={index}>
+								<AccordionTrigger>{faq.question}</AccordionTrigger>
+								<AccordionContent>{faq.answer}</AccordionContent>
+							</AccordionItem>
+						))}
+					</Accordion>
+				</div>
+			</section>
+
+			{/* CTA Section */}
+			<section className="py-20 w-full">
+				<div className="container mx-auto px-4 text-center">
+					<h2 className="text-4xl font-bold text-white mb-4">
+						Let's Build Something Amazing
+					</h2>
+					<p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+						Have a project in mind? I'm available for freelance work and
+						collaborations. Let's connect and turn your ideas into reality.
+					</p>
+					<button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 flex items-center justify-center mx-auto group">
+						Get in Touch{" "}
+						<ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+					</button>
 				</div>
 			</section>
 		</div>
