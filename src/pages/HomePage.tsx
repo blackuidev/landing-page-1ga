@@ -1,4 +1,4 @@
-import { Globe } from "@/components/lightswind/globe";
+import Globe from "@/components/lightswind/globe";
 import { motion } from "framer-motion";
 import { GlowingCards, GlowingCard } from "@/components/lightswind/glowing-cards";
 import { TeamCarousel } from "@/components/lightswind/team-carousel";

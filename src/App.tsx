@@ -7,7 +7,7 @@ import {
 import { AnimatePresence } from "framer-motion";
 
 import Layout from "./components/Layout";
-import HomePage from "./pages/HomePage";
+import { HomePage } from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";

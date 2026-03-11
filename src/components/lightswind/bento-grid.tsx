@@ -1,77 +1,57 @@
-import React from "react";
 import { cn } from "../lib/utils";
+import React from "react";
 
-interface BentoCardData {
-  title: string;
-  description: string;
-  icon: React.ElementType;
-  className?: string;
-  background?: React.ReactNode;
-}
-
-interface BentoGridProps extends React.HTMLAttributes<HTMLDivElement> {
-  cards: BentoCardData[];
-  columns?: number;
-  rowHeight?: string;
-}
-
-export const BentoGrid = ({
-  cards,
-  columns = 3,
-  rowHeight = "auto",
+const BentoGrid = ({
   className,
-  ...props
-}: BentoGridProps) => {
+  children,
+}: {
+  className?: string;
+  children?: React.ReactNode;
+}) => {
   return (
     <div
       className={cn(
-        `grid w-full gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-${columns} bg-background`,
+        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto ",
         className
       )}
-      {...props}
     >
-      {cards.map((card, index) => {
-        const Icon = card.icon;
-        return (
-          <div
-            key={index}
-            className={cn(
-              "relative overflow-hidden rounded-2xl p-5 flex flex-col justify-end",
-              "h-[15rem]",
-              "bg-white/40 dark:bg-white/5 backdrop-blur-lg",
-              "border border-black/10 dark:border-white/10",
-              "shadow-inner shadow-black/10 dark:shadow-white/10",
-              "text-black dark:text-white",
-              "group transition-all duration-300 ease-in-out",
-              card.className
-            )}
-          >
-            {card.background && (
-              <div className="absolute inset-0 z-0">{card.background}</div>
-            )}
-
-            {/* Hover-revealed content */}
-            <div className="relative z-10 w-full">
-              <div
-                className={cn(
-                  "flex flex-col justify-end h-full",
-                  "opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0",
-                  "transition-all duration-300 ease-out"
-                )}
-              >
-                <Icon className="h-5 w-5 text-current mb-2" />
-                <h3 className="text-base font-semibold">{card.title}</h3>
-                <p className="text-sm text-muted-foreground dark:text-white/60">
-                  {card.description}
-                </p>
-              </div>
-            </div>
-
-            {/* Hover overlay effect */}
-            <div className="pointer-events-none absolute inset-0 transition-all duration-300 group-hover:bg-black/5 dark:group-hover:bg-white/5 rounded-2xl" />
-          </div>
-        );
-      })}
+      {children}
     </div>
   );
 };
+
+const BentoGridItem = ({
+  className,
+  title,
+  description,
+  header,
+  icon,
+}: {
+  className?: string;
+  title?: string | React.ReactNode;
+  description?: string | React.ReactNode;
+  header?: React.ReactNode;
+  icon?: React.ReactNode;
+}) => {
+  return (
+    <div
+      className={cn(
+        "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
+        className
+      )}
+    >
+      {header}
+      <div className="group-hover/bento:translate-x-2 transition duration-200">
+        {icon}
+        <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
+          {title}
+        </div>
+        <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">
+          {description}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { BentoGrid, BentoGridItem };
