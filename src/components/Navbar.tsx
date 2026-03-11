@@ -1,7 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Code } from "lucide-react";
+import { Code, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { ToggleTheme } from "@/components/lightswind/toggle-theme";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -48,11 +49,13 @@ const Navbar = () => {
                 )}
               </NavLink>
             ))}
+            <ToggleTheme animationType="flip-x-in" />
           </div>
 
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)}>
-                {isOpen ? <span className="text-2xl">&times;</span> : <span className="text-2xl">&#9776;</span>}
+          <div className="md:hidden flex items-center gap-2">
+            <ToggleTheme animationType="flip-x-in" />
+            <button onClick={() => setIsOpen(!isOpen)} className="p-2">
+                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
